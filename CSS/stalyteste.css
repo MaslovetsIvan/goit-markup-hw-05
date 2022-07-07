@@ -1,0 +1,14 @@
+.box {
+    width: 150px;
+    height: 150px;
+    background-color: teal;
+    /*transition-property: background-color;   
+    transition-duration: 1000ms;             
+    transition-timing-function: linear;      
+    transition-delay: 500ms;*/
+    transition: background-color 500ms linear, transform 500ms ease-in-out;
+  }
+  
+  .box:hover {
+    background-color: orange;
+  }

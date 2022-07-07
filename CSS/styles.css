@@ -44,6 +44,7 @@ ul {
 .site-nav{
     display: flex;
     margin: 0;
+
 }
 .site-nav .nav-head{
     display: block;
@@ -51,10 +52,9 @@ ul {
 }
 
 .nav-head{
+    position: relative;
     display: flex;
     align-items: center;
-}
-.nav-head{
     color: var(--title-color);
 	font-family: 'Roboto';
 	font-weight: 500;
@@ -62,11 +62,25 @@ ul {
 	line-height: 1.14;
 	letter-spacing: 0.02em;
     text-decoration:none ;
+    
+    transition:color 250ms cubic-bezier(0.4, 0, 0.2, 1); 
+
 }    
 .nav-head .site-nav-iten:not(:last-child){
     margin-right: 50px;
 
 }
+.current::after{
+    position: absolute;
+    bottom: -32px;
+    display: flex;
+    content: '';
+    width: 100%;
+    height: 4px;
+    background-color: #2196F3;
+
+}
+
 .icon-header{
     border: 0;
     
@@ -76,6 +90,7 @@ ul {
 }
 .nav-head:hover,
 .nav-head:focus {
+    
 	color: #2196F3;
 }
 .site-nav.nav-head:active{
@@ -90,7 +105,7 @@ ul {
     text-decoration: none;
     color: var(--paragraph-color);
     font-weight: 500;
-    
+    transition:color 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 }
 .nav-contact:hover,
 .nav-contact:focus {
@@ -155,7 +170,6 @@ body{
 
 .hidden{
     display: none;
-    /*visibility:hidden;*/
     margin: 0;
     padding: 0;
 }
@@ -203,13 +217,34 @@ body{
 .activities-item{
     display: flex;
     margin: 0;
-
+}
+.activities-img{
     
 }
-.activities-img + .activities-img{
-margin-left: 30px;
-
-
+.activities-link + .activities-link{
+    margin-left: 30px;
+}
+.activities-link{
+    position: relative;
+    
+    
+}
+.activities-link-text{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.2;
+    color: #FFFFFF;
+    text-transform:uppercase;
+    width: 100%;
+    padding-bottom: 28px;
+    padding-top: 28px;
+    background: rgba(47, 48, 58, 0.8);
+    display: flex;
+    justify-content: center;
 }
 .basic-title{
     color: var(--title-color);
@@ -279,9 +314,9 @@ border-radius: 0px 0px 4px 4px;
     color: #AFB1B8;
     width: 44px;
     height: 44px;
+    transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .team-container-icon{
-    /*border-radius: 50%;*/
     fill: currentColor;
     width: 44px;
     height: 44px;
@@ -307,12 +342,12 @@ border-radius: 0px 0px 4px 4px;
     width: 170px;
     height: 92px;
     border-radius: 4px;
+    transition:color 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 }
 .clients-link{
     fill: currentColor;
     width: 170px;
-    height: 92px;
-                                                                                                    */
+    height: 92px;                                                                                              */
 }
 .clients-item-link:hover,
 .clients-item-link:focus{
@@ -331,6 +366,9 @@ border-radius: 0px 0px 4px 4px;
     padding-top: 94px;
     padding-bottom: 94px;
 }
+.work-contaner-item{
+    
+}
 .work-contaner-item:not(:last-child){
     margin-right: 8px;
 }
@@ -346,6 +384,7 @@ border-radius: 0px 0px 4px 4px;
     border: 0;
     border-radius: 4px;
     padding: 6px 22px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .filter-button:hover,
 .filter-button:focus{
@@ -358,8 +397,21 @@ border-radius: 0px 0px 4px 4px;
     margin: -15px -15px 0px -15px;
 }
 .projects-contanet-item{
+    
     border: 1px solid #EEEEEE;
     margin: 15px;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.product{
+    position: relative;
+}
+.projects-contanet-img::before{
+    content: '';
+    position: absolute;
+    display: inline-block;
+    height: 294px;
+    background-color:  rgba(33, 150, 243, 0.9);
+    
 }
 .projects-contanet-item:nth-child(3n+3){
     margin-right: 0;
@@ -380,7 +432,6 @@ border-radius: 0px 0px 4px 4px;
     letter-spacing: 0.06em;
     margin: 0;
     padding-bottom: 4px;
-    /*padding: 20px 24px 4px 24px;*/
 }  
 .catalog-type{
     color: var(--paragraph-color);
@@ -435,6 +486,7 @@ footer{
     letter-spacing: 0.03em;
     text-decoration: none;
     margin: 10px 0 10px 0;
+    transition:color 250ms cubic-bezier(0.4, 0, 0.2, 1); 
     
 }
 .nav-address{
@@ -451,6 +503,7 @@ footer{
     text-decoration: none;
     font-style: normal;
     margin: 10px 0 10px 0;
+    transition:color 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 }
 .nav-footer-city:hover,
 .nav-footer-city:focus{
