@@ -397,22 +397,19 @@ border-radius: 0px 0px 4px 4px;
     margin: -15px -15px 0px -15px;
 }
 .projects-contanet-item{
-    
+    position: relative;
     border: 1px solid #EEEEEE;
     margin: 15px;
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.product{
+.projects-contanet-img{
     position: relative;
-}
-.projects-contanet-img::before{
-    content: '';
-    position: absolute;
-    display: inline-block;
+    width:370px;
     height: 294px;
-    background-color:  rgba(33, 150, 243, 0.9);
-    
+    overflow: hidden;
+
 }
+
 .projects-contanet-item:nth-child(3n+3){
     margin-right: 0;
 }
@@ -420,10 +417,39 @@ border-radius: 0px 0px 4px 4px;
 .projects-contanet-item:focus{
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
+
+
 .catalog{
-    display: grid;
+    /*display: grid;*/
     text-decoration: none;
     }
+.catalog-img{
+    position: absolute;
+    
+    width: 100%;
+    height: 100%;
+
+}
+.catalog-text{
+    position: absolute;
+    background-color: rgba(33, 150, 243, 0.9);;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 63px 24px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.55;
+    color: #EEEEEE;
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
+}
+.projects-contanet-item:hover .catalog-text{
+    transform: translateY(0);
+    
+}
+
 .catalog-title{
     color: var(--title-color);
     font-weight: 700;
@@ -442,6 +468,9 @@ border-radius: 0px 0px 4px 4px;
     margin: 0;
 }
 .catalog-title-type{
+    position: relative;
+    width: 100%;
+    bottom: 0;
     padding-top: 20px;
     padding-left: 24px;
     padding-bottom: 20px;
@@ -541,4 +570,37 @@ footer{
 .footer-container-icon:focus{
     background-color: #2196F3;
 }
-    
+
+.backdrop{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+}
+.modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 528px;
+    min-height: 580px;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.modal-close{
+    position: absolute;
+    top: 8px;
+    right: 32px;
+    background: #FFFFFF;
+    border: 0;
+}
+.modal-close-img{
+    position: absolute;
+}
+.is-hidden{
+    display: none;
+}
