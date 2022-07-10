@@ -565,7 +565,7 @@ footer{
     fill: #f3f5f8;
     width: 44px;
     height: 44px;
-    transition:  1250ms cubic-bezier(0.4, 0, 0.2, 1)
+    transition:  250ms cubic-bezier(0.4, 0, 0.2, 1)
 
 }
 .footer-container-icon:hover,
@@ -574,28 +574,33 @@ footer{
 }
 
 .backdrop{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: rgba(0, 0, 0, 0.2);
+    opacity: 1;
+    transition:  opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(1);
     width: 528px;
     min-height: 580px;
     background: #FFFFFF;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    opacity: 1;
+    border-radius: 4px;  
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 .modal-close{
     position: absolute;
     top: 8px;
     right: 32px;
     background: #FFFFFF;
     border: 0;
-
 }
 .modal-close-img{
     position: absolute;
@@ -603,4 +608,7 @@ footer{
 .is-hidden{
     opacity: 0;
     pointer-events: none;
+}
+.is-hidden .modal{
+    transform: translate(-50%, -50%) scale(0.9);
 }
